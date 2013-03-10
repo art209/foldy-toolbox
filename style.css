@@ -1,0 +1,716 @@
+/*
+Theme Name: foldy
+Template: toolbox
+Author: Matt Vincent
+Version: 1.0
+Description: Responsive child theme for Automattic's Toolbox using Paravel's Foldy960.
+*/
+ 
+@import url("../toolbox/style.css");
+@import url("../foldy/foldy.css");
+@import url("../foldy/ie.css");
+
+/* There's extra stuff in here, clear out what you don't want need, like or is just plain old smelly CSS.  This is the rough draft. Also, I changed the navigation to blocks and didn't support sub/subsub menus.  You'll have to edit that yourself. Watch for border-box on li in navigation at max-width 639px, it is necessary if you don't use the helper in foldy.css.
+	 -Matt
+*/
+
+/* Table of Content
+--------------------------------------------------------------
+	#Reset & Basics
+	#Basic Styles
+	#Site Styles
+	#Typography
+	#Header
+	#Menus
+	#Content
+	#Widgets
+	#Footer
+	#Images
+	#Forms
+	#WPCF7
+	#Misc
+	#Media Queries
+	 */
+
+/* #Reset & Basics (Inspired by E. Meyers)
+-------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+/* HTML5 display-role reset for older browsers - Eric Meyer reset */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+
+/* Basic Styles
+-------------------------------------------------------------- */
+body{
+	background: #f6f6f6 url('images/bg-diagonal.jpg') repeat top center scroll;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+}
+
+#page {
+	display: block;
+	width: 100%;
+	box-shadow: none;
+	margin: 0 auto;
+	overflow: visible;
+	color: #444444;
+	background: #fff;
+	overflow: hidden;
+	font: 1em/1.375em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-shadow: none;
+}
+
+
+::-moz-selection { background: #0090d6; color: #fff; text-shadow: none; }
+::selection { background: #0090d6; color: #fff; text-shadow: none; }
+
+/* =Typography
+-------------------------------------------------------------- */
+@font-face {
+    font-family: 'yourfont';
+    src: url('fonts/yourfont-webfont.eot');
+    src: url('fonts/yourfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/yourfont-webfont.woff') format('woff'),
+         url('fonts/yourfont-webfont.ttf') format('truetype'),
+         url('fonts/yourfont-webfont.svg#yourfontregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+a {
+	color: #178ac6;
+	text-decoration: none;
+	-webkit-transition: color .4s ease-in;
+   -moz-transition: color .4s ease-in;
+   -o-transition: color .4s ease-in;
+   transition: color .4s ease-in;
+}
+a:hover {
+	color: #444444;background: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #3e444b;
+	text-shadow: none;padding: 0;	
+	font-family: sans-serif;
+}
+h1{
+	margin: 0 0 10px 0;
+	font: normal 1.5em/2 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+h2{
+	margin: 0 0 8px 0;
+	font: normal 1.33em/1.75 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+h3{
+	margin: 0 0 6px 0;
+	font: normal 1.25em/1.5 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+#primary {
+	float: none;
+	margin: 0 auto;
+	padding: 0;
+	background: inherit;
+	/* min height for empty page */
+	min-height: 0px;
+}
+.full-width #content,
+.image-attachment #content,
+.error404 #content {
+	margin: 1.25em auto;
+	padding: 0 2%;
+}
+#content {
+	margin: 1.25em 0;
+	padding: 0 2%;
+	overflow: visible;
+}
+	
+/* =Header
+-------------------------------------------------------------- */
+/* frontpage and secondarypage headers */
+#homepage-header {
+	background: #eeeeee;
+	float: left;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	padding:0;
+	font: 1.25em/1.25em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-shadow: 1px 1px 0 rgba(255,255,255,1);
+}
+#homepage-header h1 {
+	padding: 0 10%;
+}
+#homepage-header p {
+	padding: .25em 5% .5em 5%;
+}
+#secondarypage-header {
+	background: #eeeeee;
+	color: #ffffff;
+	float: left;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	padding: 0;
+	
+}
+.logo {
+	float: left;
+	text-align: left;
+	margin: 1em 5% 1em 15%;
+	padding: .25em;
+	font: bold 1.5em/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	background: #178ac6;
+	box-shadow: -1px 1px 0px #005881,-2px 2px 0px #005881,-3px 3px 0px #005881,-4px 4px 0px #005881,-5px 5px 0px #005881;;
+	-moz-box-shadow: -1px 1px 0px #005881,-2px 2px 0px #005881,-3px 3px 0px #005881,-4px 4px 0px #005881,-5px 5px 0px #005881;;
+	-webkit-box-shadow: -1px 1px 0px #005881,-2px 2px 0px #005881,-3px 3px 0px #005881,-4px 4px 0px #005881,-5px 5px 0px #005881;
+	-webkit-transition: background .7s ease-in-out,box-shadow .7s ease-in-out;
+	-moz-transition: background .7s ease-in-out,box-shadow .7s ease-in-out;
+	-o-transition: background .7s ease-in-out,box-shadow .7s ease-in-out;
+	transition: background .7s ease-in-out,box-shadow .7s ease-in-out;
+}
+.logo a {
+	color: #ffffff;padding: 10px;
+}
+.logo:hover {
+	background: #005881;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-webkit-transition: background .7s ease-in-out,box-shadow .7s ease-in-out;
+	-moz-transition: background .7s ease-in-out,box-shadow .7s ease-in-out;
+	-o-transition: background .7s ease-in-out,box-shadow .7s ease-in-out;
+	transition: background .7s ease-in-out,box-shadow .7s ease-in-out;
+	}
+	/* set up for search input in top right widget area */
+.top-right-widget {
+	float: right;
+	margin:1.5em 0 .5em 0;
+	text-align: left;
+	font: 1em/1em Georgia, "Times New Roman", Times, serif;}
+.top-right-widget #searchsubmit, .top-right-widget select, .top-right-widget input#submit {
+	background: #f6faff;
+	color: #005881;
+	border: 1px solid #eeeeee;
+   padding: 2px 10px;
+   font: 1em/1.25em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+   text-align: center;}
+.top-right-widget input#s {
+	box-shadow: none;
+	border: 1px solid #eeeeee;
+	padding: .5em 1em;
+	max-width: 40%;}
+.top-right-widget #searchsubmit:hover, .top-right-widget input#submit:hover {
+	background: #3e444b;
+	color: #f6faff;
+	border: 1px solid #333;}
+/* =Menus
+-------------------------------------------------------------- */
+.menu-mainmenu-container, .menu-topmenu-container {width: 100%;padding: 0;margin: 0;max-width: 100%;height: auto;
+}
+/*-- needed when not using own WP3 menu --*/
+.menu ul {
+	margin: 0;
+}
+/*-- main menu -- actually lower menu --*/
+#access {
+	display: block;
+	position: relative;
+	float: left;
+	margin: 0 auto;
+	width: 100%;
+	text-transform: uppercase;
+	text-align: center;
+	padding:0;
+	font: 400 .8em/.8em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	border-bottom: 1px solid #eeeeee;
+	background: #f6f6f6;
+}
+#access ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	display: inline-block;	 
+}
+#access li {float: left;position: relative;line-height: 1em;padding: 10px;
+}
+#access a {
+	display: block;
+	text-decoration: none;
+	color: #3e444b;
+}
+#access ul ul {
+	box-shadow: none;
+	display: none;
+	float: left;
+	position: absolute;
+	top: 2em;
+	left: 0;
+	z-index: 99999;
+	padding: 0px;
+}
+#access ul ul ul {left: 100%;top: 0;
+}
+#access ul ul a {background: #ffffff;line-height: 1.5em;padding: .5em .5em .5em 1em;width: 10em;height: auto;
+}
+#access li:hover > a, #access ul ul :hover > a {color: #6f849e
+}
+#access ul ul a:hover {background: #dddddd;color: #6f849e;
+   }
+#access ul li:hover > ul {display: block;
+}
+
+/*-- top  menu --*/
+/*-- id is NOT inside #page --*/
+#fixed-nav {
+	position: relative;
+	width: 100%; height: auto;
+	clear: both;
+	display: block;
+	color: #ffffff;
+	margin: 0 auto;
+	text-align: center;
+	padding: 1em 0;
+	background: #0069b2;
+	text-transform: uppercase;
+	list-style-type:none;
+	font: 900 .9em/.9em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	background: #3e444b;
+}
+#fixed-nav ul {list-style: none;overflow: hidden;padding: 0;
+}
+#fixed-nav li {display: inline;clear: both;}
+#fixed-nav li:after {content: ' |'; color: #178ac6;text-shadow: none;
+}
+#fixed-nav li:last-child:after{content: '';
+}
+
+#fixed-nav a {color:#ffffff; margin: 0 1%;line-height: 1.5em;}
+#fixed-nav a:hover {color: #178ac6;}
+
+/* =Content
+-------------------------------------------------------------- */
+.entry-header {padding: 10px 4%;
+}
+h1.entry-title {color: #3e444b;font: 24px/29px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;}
+.sticky {
+}
+.entry-meta {clear: both;display: block;margin-bottom: 10px;padding-bottom: 10px;padding-top: 10px;font-size: .8em;
+}
+footer.entry-meta {clear: both;display: block;margin-bottom: 50px;
+}
+.single-author .entry-meta .byline {display: none;
+}
+#content nav {display: block;overflow: hidden;
+}
+#content nav .nav-previous {float: left;width: 50%;font-size: .8em;
+}
+#content nav .nav-next {float: right;text-align: right;width: 50%;font-size: .8em;
+}
+#content #nav-above {display: none;
+}
+.paged #content #nav-above, .single #content #nav-above {display: block;font: 80%;
+}
+#nav-below {margin: 1em 0 0;}
+
+.page-link {clear: both;margin: 0 0 1em;}
+.page .edit-link {clear: both;display: block;}
+
+/* 404 page */.error404 .widget {float: left;width: 33%;}
+.error404 .widget .widgettitle,
+.error404 .widget ul {margin-right: 1em;}
+.error404 .widget_tag_cloud {clear: both;float: none;width: 100%;}
+
+/* Notices */
+.post .notice, .error404 #searchform {background: inherit;display: block;padding: 1em;border: 1px solid #eeeeee;}
+
+/* Image Attachments */
+.image-attachment div.entry-meta {float: left;}
+.image-attachment nav {float: right;margin: 0 0 1em 0;}
+.image-attachment .entry-content {clear: both;}
+.image-attachment .entry-content .entry-attachment {background: #eee;margin: 0 0 1em;padding: 1em;text-align: center;}
+.image-attachment .entry-content .attachment {display: block;margin: 0 auto;text-align: center;}
+
+/* Aside Posts */
+.format-aside .entry-header {display: none;}
+.single .format-aside .entry-header {display: block;}
+.format-aside .entry-content, .format-aside .entry-summary {padding-top: 1em;}
+.single .format-aside .entry-content, .single .format-aside .entry-summary {padding-top: 0;}
+
+/* Gallery Posts */
+.format-gallery .gallery-thumb {float: left;margin: 0 1em 0 0;}
+
+/* Image Posts */
+.format-image .entry-header {display: none;}
+.single .format-image .entry-header {display: block;}
+.format-image .entry-content, .format-image .entry-summary {padding-top: 1em;}
+.single .format-image .entry-content, .single .format-image .entry-summary {padding-top: 0;}
+
+/* =Widgets
+-------------------------------------------------------------- */
+.widget {display: block;}
+.widget-area .widget_search {overflow: hidden;}
+.widget-area .widget_search input {float: none;}
+h1.widget-title{
+	color: #3e444b;
+	padding: 0;
+	margin:.5em 0 0 0;
+	font: normal 1.25em/1.25em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;}
+.textwidget h1{
+	text-transform: uppercase;
+	font-size: 1em;
+	line-height: 1.25em;
+	font-weight: 700;
+	color: #3e444b;
+	padding: 0;
+	margin: 0 0 .8em 0;}
+.textwidget h2{
+	text-transform: uppercase;
+	font-size: 1em;
+	line-height: 1.25em;
+	font-weight: 700;
+	color: #3e444b;
+	padding: 0;
+	margin: 0 0 .8em 0;}
+.textwidget h3{
+	text-transform: uppercase;
+	font-size: 1em;
+	line-height: 1.25em;
+	font-weight: 700;
+	color: #3e444b;
+	padding: 0;
+	margin: 0 0 .8em 0;}
+.textwidget h3 a {color: #178ac6;}
+.textwidget h3 a:hover{color: #6f849e;}
+.widget_search {margin: 0 0 2em 0;}
+#main .widget-area {
+	float: none;
+	overflow: hidden;
+	margin: 1em 1%;
+	padding: 1em 4%;
+	width: 90%;
+	max-width: 90%;
+	height: auto;
+    color: #444444;
+	background: #f7f7f7;
+	text-align: left;}
+.widget_recent_entries ul {
+	text-transform: uppercase;
+	color: #444444;
+	text-shadow: 1px 1px 0 rgba(255,255,255,.8);
+	font: bolder 1em/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;}
+.widget_recent_entries ul li a {color: #178ac6;}
+.widget_recent_entries ul li a:hover{color: #6f849e;}
+#sidebarfloat {float: right;}
+.textwidget {color: #444444;margin: 10px 0;font: 1em/1.33em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;}
+
+/* =Footer
+-------------------------------------------------------------- */
+#colophon {
+	display:block;
+	clear: both;
+	width: 100%;}
+#colophon ul {font-weight: normal;text-transform: capitalize;margin-bottom:1em;font: inherit;}
+
+/*-- used instead of grid-2s --*/
+#footer-sidebar1 {float: left;width: 28%;padding:.5em 2%;margin:0 0;background: #eeeeee;}
+#footer-sidebar2 {float: left;width: 28%;padding:.5em 2%;margin:0 2%;background: #eeeeee;}
+#footer-sidebar3 {float: left;width: 28%;padding:.5em 2%;margin:0 0;background: #eeeeee;}
+
+#copy {
+	color: #ffffff;
+	padding: 2em 1em;
+	text-align: center;
+	font: .625em/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	border-top: 1px solid #dddddd;
+	text-shadow: none;
+	font-weight: 600;
+	border-top: 1px solid #565f69;
+	background: #3e444b;}
+#copy a{color: #178ac6;font-weight: 900;}
+#copy a:hover{color: #ff00a1;text-shadow: none;}
+
+/* =Images
+-------------------------------------------------------------- */
+a img {border: none;}
+p img {margin-bottom: 0.5em; /* a small bottom margin prevents content floating under images */}
+.no-margin {margin-bottom: 0;}
+img.scale-with-grid {width: 100%;max-width: 100%;height: auto;}
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+.attachment img,
+.widget-area img,
+.wp-caption {max-width: 100%;height: auto;}
+img.alignleft {margin: .75em 1% 0 0;}
+img.alignright {margin: .75em 0 0 1%;}
+.wp-caption {padding: .5em;text-align: center;}
+.wp-caption img {margin: .25em;}
+.wp-caption .wp-caption-text {margin: .5em;}
+.wp-smiley {margin: 0;}
+/* fancy image effects */
+.circle {
+	border-radius: 50%;-moz-border-radius: 50%;-webkit-border-radius: 50%;-khtml-border-radius: 50%;
+	background-clip: padding-box;-moz-background-clip: padding;-webkit-background-clip: padding-box;
+	box-shadow: 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow: 0px 0px 1px rgba(255,255,255,1);-webkit-box-shadow: 0px 0px 1px rgba(255,255,255,1);}
+.circle-png {
+		border-radius: 50%;-moz-border-radius: 50%;-webkit-border-radius: 50%;-khtml-border-radius: 50%;
+		background-clip: padding-box;-moz-background-clip: padding;-webkit-background-clip: padding-box;box-shadow: none;}
+.polaroid {
+/* set max lower or img will get cut off with rotate */
+	max-width: 93%;
+	height: auto;
+	padding: 1.5% 1.5% 5.5% 1.5%;
+	margin: 5px 2%;
+	background: white;
+	border: 1px solid #ccc;
+	-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
+	box-shadow: 1px 3px 6px rgba(0,0,0,.74);
+	-moz-box-shadow: 1px 3px 6px rgba(0,0,0,.74);
+	-webkit-box-shadow: 1px 3px 6px rgba(0,0,0,.74);}
+.polaroid:hover {
+	transform: rotate(4deg);-webkit-transform: rotate(4deg);-moz-transform: rotate(4deg);
+}	
+.tilt-left{transform: rotate(-2deg);-webkit-transform: rotate(-2deg);-moz-transform: rotate(-2deg);}
+.tilt-right{transform: rotate(1deg);-webkit-transform: rotate(1deg);-moz-transform: rotate(1deg);}
+.blue-shadow {
+	max-width: 97%;
+	height: auto;
+	margin: 0 1.5%;
+	background: #178ac6;
+	box-shadow: -1px 1px 0px #005881,-2px 2px 0px #005881,-3px 3px 0px #005881,-4px 4px 0px #005881,-5px 5px 0px #005881;
+	-moz-box-shadow: -1px 1px 0px #005881,-2px 2px 0px #005881,-3px 3px 0px #005881,-4px 4px 0px #005881,-5px 5px 0px #005881;
+	-webkit-box-shadow: -1px 1px 0px #005881,-2px 2px 0px #005881,-3px 3px 0px #005881,-4px 4px 0px #005881,-5px 5px 0px #005881;
+	-webkit-transition: box-shadow .7s ease-in;
+	-moz-transition: box-shadow .7s ease-in;
+	-o-transition: box-shadow .7s ease-in;
+	transition: box-shadow .7s ease-in;
+	-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
+}
+.blue-shadow:hover  {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-webkit-transition: box-shadow .7s ease-out;
+	-moz-transition: box-shadow .7s ease-out;
+	-o-transition: box-shadow .7s ease-out;
+	transition: box-shadow .7s ease-out;
+}
+
+/* =Forms
+-------------------------------------------------------------- */
+#searchform label {display: none;}
+#searchform input#s {width: 90%;}
+input[type=text],
+input#s {margin: 2px 1em 3px 0;width: 90%;background: #f6faff;}
+textarea {width: 80%;}
+.required {color: #cc0033;}
+#searchsubmit, select, input#submit {
+	background: #f6faff;
+	color: #005881;
+	border: 1px solid #dddddd;
+	-webkit-transition: color .4s ease-in, background-color .3s ease-in;
+   -moz-transition: color .4s ease-in, background-color .3s ease-in;
+   -o-transition: color .4s ease-in, background-color .3s ease-in;
+   transition: color .4s ease-in, background-color .3s ease-in;
+   padding: 2px 10px;
+   font: 1em/1.25em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;}
+#searchsubmit:hover, input#submit:hover {
+	background: #3e444b;
+	color: #f6faff;
+	border: 1px solid #f6faff;}
+input, textarea {padding: 5px;border: 1px solid #dddddd;
+}
+/* =Comments
+-------------------------------------------------------------- */
+article.comment {display: block;}
+#respond input[type=text] {display: block;width: 60%;}
+#respond textarea {display: block;margin: 0 0 1em;width: 80%;}
+#respond .form-allowed-tags {clear: both;width: 80%;}
+#respond .form-allowed-tags code {display: block;}
+
+/* =WPCF7 for Contact Form 7 plugin
+-------------------------------------------------------------- */
+.wpcf7-list-item-label {margin: 0 20px 0 0;}
+.wpcf7-submit {
+	background: #f6faff;
+	color: #005881;
+	border: 1px solid #dddddd;
+	padding: 0 5px;
+	-webkit-transition: color .4s ease-in, background-color .3s ease-in;
+   -moz-transition: color .4s ease-in, background-color .3s ease-in;
+   -o-transition: color .4s ease-in, background-color .3s ease-in;
+   transition: color .4s ease-in, background-color .3s ease-in;
+   padding: 2px 10px;
+   font: 1em/1.25em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;}
+.wpcf7-submit:hover {background: #3e444b;color: #f6faff;border: 1px solid #f6faff;}
+.wpcf7-form-control-wrap br { display: none;}
+.wpcf7 input[type="select"] {
+background: none repeat scroll 0 0 #3e444b;color: #f6faff;border: 1px solid #f6faff;padding: 10px 5px;width:210px;max-width: 400px;}
+.wpcf7-textarea, .wpcf7-text, .wpcf7-captchar {min-width: 50px;max-width: 400px;}
+/* -- prevent wrap on lists in WPCF7 -- */
+span.wpcf7-checkbox span.wpcf7-list-item { display: block; }
+span.wpcf7-radio span.wpcf7-list-item { display: inline; }
+
+/* =Random Stuff
+-------------------------------------------------------------- */
+	
+hr {border: 1px solid #eeeeee;}
+ul.u {list-style-type:circle;line-height: 125%;}
+.center {text-align: center;}
+
+/* #Clearing (some from getskeleton.com)
+================================================== */
+
+/* Self Clearing Goodness */
+.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+/* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+#clear {clear: both;}
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;}
+
+
+/* =Scroll up
+-------------------------------------------------------------- */
+	.scrollup, a.scrollup {width:40px;height:40px;opacity:.25;position:fixed;bottom:10px;right:10px;display:none;text-indent:-9999px;background: url('images/scroll-up.png') no-repeat;z-index: 9910;border-bottom: none;filter: alpha(opacity=25);}
+
+/* =Media Querie adds
+------------------------------------------------------*/
+	@media screen and (min-width: 1140px) {
+	#main {font: 1.125em/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;}
+	}
+	@media screen and (min-width: 480px) and (max-width: 639px) {
+	.logo {margin: .5em 0 .5em 5%;padding: .25em 5%;}
+	}
+	@media screen and max-width: 479px) {
+	.logo {margin: .5em 0 1em 5%;padding: .25em 5%;}
+	}
+	@media screen and (max-width: 639px) {
+	.top-right-widget {width: 80%;margin:0 auto;padding:.25em 10%;text-align: center;}
+	.top-right-widget input#s {
+		box-shadow: none;
+		border: 1px solid #eeeeee;
+		padding: .5em 1em;
+		max-width: 40%;}
+	/*-- footer -- */
+	#footer-sidebar1,
+	#footer-sidebar2,
+	#footer-sidebar3 {float: left;width: 96%;padding:.5em 2%;margin:1em 0 0 0;}	
+	/* Both menus look best in even numbers --
+		border-box needed for white borders (added to li) --
+		if you don't like this menu use something like twentytweleve nav */
+		
+	/*-- top menu --*/
+	.menu-topmenu-container, .menu-topmenu-container ul {width: 100%;padding: 0;margin: 0;}
+	#fixed-nav {
+	margin: .5em 0 0 0;
+	float: left;overflow: hidden;
+	width: 100%;
+	clear: none;
+	display: block;
+	color: #ffffff;
+	text-align: center;
+	padding:0;
+	background: inherit;
+	text-transform: uppercase;
+	text-shadow: none;
+	list-style-type:none;
+	font: 900 .8em/1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	box-shadow:none;-moz-box-shadow:none;-webkit-box-shadow: none;}
+	#fixed-nav ul {list-style: none;overflow: hidden;width: 100%;
+	}
+	#fixed-nav li {background-color: #3e444b;color: white;display:block;clear: none;overflow: hidden;width: 50%;float: left;padding:10px 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+	#fixed-nav li:after {display: none;}
+	#fixed-nav li:nth-child(odd) {border-bottom: 1px solid #fff;border-right: 1px solid #fff;}
+	#fixed-nav li:nth-child(even) {border-bottom: 1px solid #fff;}
+	/*-- lower menu --*/
+	#access {
+		display: block;
+		float: left;
+		margin: 0;
+		overflow: hidden;
+		width: 100%;
+		text-transform: uppercase;
+		text-align: center;
+		font: 400 .75em/.75em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+		background: inherit;
+		border-bottom: none;
+		clear: none;
+	}
+	#access ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+		overflow: hidden;
+		width: 100%; 
+	}
+	#access li {position: relative;
+	display:block;clear: none;overflow: hidden;width: 50%;float: left;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background: #dddddd;padding: 5px 0;
+	}
+	#access li:nth-child(1) {border-top: 1px solid #fff;}
+	#access li:nth-child(2) {border-top: 1px solid #fff;}
+	#access li:nth-child(odd) {border-bottom: 1px solid #fff;border-right: 1px solid #fff;}
+	#access li:nth-child(even) {border-bottom: 1px solid #fff;border-right: none;}
+
+	}
+	#access li:hover > a{background: inherit;color: #6f849e;
+	}
+	#access a {
+		display: block;
+		text-decoration: none;
+		color: #3e444b;
+	}
+	#access ul ul {
+		box-shadow: none;
+		display: none;
+		float: left;
+		position: absolute;
+		top: 2em;
+		left: 0;
+		z-index: 99999;
+		padding: 0px;
+	}
+	#access ul ul ul {left: 100%;top: 0;width: 100%;
+	}
+	#access ul ul a {background: purple;line-height: 1.5em;padding: .5em .5em .5em 1em;width: 10em;height: auto;
+	}
+/*-- FIX for 639 and under-----------------------
+				------------- NOT SET UP FOR SUB/SUBSUB MENUS -------------------*/
+	#access ul ul :hover > a {background: red;color: #6f849e;display: none;
+	}
+	#access ul ul a:hover {background: blue;color: #6f849e;display: none;
+	   }
+	#access ul li:hover > ul {display: block;display: none;
+	}
+	}

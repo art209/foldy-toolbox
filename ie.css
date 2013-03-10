@@ -1,0 +1,109 @@
+/* ie
+-------------------------------------------------------------- */
+
+#ie8 .container {
+	width: 1024px;
+	margin:0 auto;
+	position: relative;
+}
+
+#ie8 .row {
+	width: 1024px;
+}
+
+#ie8 #page {
+	display: block;
+	margin:0;
+}
+
+#ie8 #primary {
+	float: left;
+	margin: 0 10px;
+}
+#ie8 #content {
+	margin: 0;
+	padding: 20px;
+}
+#ie8 #main .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 220px;
+}
+
+/* Increase the size of the content area for templates without sidebars */
+#ie8 .full-width #content,
+#ie8 .image-attachment #content,
+#ie8 .error404 #content {
+	margin: 0;
+	width: 960px;
+	padding: 0 0 0 20px;
+}
+
+#ie8 .grid-2 {
+	width: 320px;
+	margin: 0;
+	float: left;
+}
+#ie8 .grid-4 {
+	width: 670px;
+	margin: 0;
+	float: left;
+}
+#ie8 .grid-6 {
+	width: 1024px;
+	margin: 0;
+	float: left;
+}
+#ie8 #access {
+   background: #eeeeee;
+	display: block;
+	float: left;
+	margin: 0 auto;
+	width: 1024px;
+	text-transform: uppercase;
+	text-align: center;
+	font: 1em/1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+#ie8 #homepage-header {
+	background: #dddddd;
+	float: left;
+	width: 1024px;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	font: bold 1.25em/1.33em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-transform: uppercase;
+}
+
+
+#ie8 .widget-area .widget_search input {
+	float: none;
+}
+	
+#ie8 #colophon {
+	clear: both;
+	display: block;
+	width: 1024px;
+	padding: 0 20px;
+}
+
+#ie8 #footer-sidebar1, #ie8 #footer-sidebar2, #ie8 #footer-sidebar3 {
+float: left;
+padding:1em 21px;
+margin:1em 0;
+width: 300px;
+overflow: hidden;
+}
+#ie8 #home-page {float: left;margin: 0;padding: 0 10px;width: 1024px;
+}
+
+#ie8 img.size-auto,
+#ie8 img.size-full,
+#ie8 img.size-large,
+#ie8 img.size-medium,
+#ie8 .attachment img,
+#ie8 .widget-area img,
+#ie8 .wp-caption {
+	max-width: 100%;
+	height: auto;
+}

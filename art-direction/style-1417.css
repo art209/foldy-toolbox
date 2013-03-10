@@ -1,0 +1,80 @@
+/*--- custom post 1385 --- use for thematic320 and up theme only ---*/
+html {
+	background: #cadfda url('../images/bg-paper-1385.jpg') repeat;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, .56);
+}
+#blog-title, #blog-title a {
+	font-family:Helvetica, "Helvetica Neue", Arial,sans-serif;
+	font-weight: 900;
+	text-transform: lowercase;
+	letter-spacing: 2px;
+	color: #e32483;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, .74);
+}
+#blog-description {
+	font-family:Helvetica, "Helvetica Neue", Arial,sans-serif;
+	text-transform: lowercase;
+	letter-spacing: 3px;
+	font-style: normal;
+}
+.entry-title {
+    font-family:Helvetica, "Helvetica Neue", Arial,sans-serif;
+    color: #e32483;
+    text-transform: lowercase;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, .74);
+}
+.menu ul li {
+	background: #dff4ef;
+}
+.entry-content p {
+font-size: 120%;
+-webkit-text-size-adjust: 120%;
+-ms-text-size-adjust: 120%;
+	line-height: 150%;
+	font-family:Helvetica, "Helvetica Neue", Arial,sans-serif;
+	color: #444444;
+}
+.entry-content a {
+	text-decoration: none;
+	color: #e32483;
+}
+.entry-content a:hover {
+	text-decoration: none;
+	color: #444444;
+}
+.entry-meta, #access {
+	font-family:Helvetica, "Helvetica Neue", Arial,sans-serif;
+	letter-spacing: 1px;
+}
+aside, #siteinfo, #comments, #content {
+	font-family:Helvetica, "Helvetica Neue", Arial,sans-serif;
+}
+#primary.aside.main-aside {
+	background: #dff4ef;
+}
+#respond {
+	background: transparent;
+}
+/*--- spans ---*/
+.plus2 {
+	font-family:Helvetica, "Helvetica Neue", Arial,sans-serif;
+	letter-spacing: 1px;
+	font-weight: 900;
+	background: #dff4ef;
+	color: #444444;
+	padding: 1px 3px;
+}
+/*---img---*/
+.entry-content img  {
+	box-shadow:0 2px 4px rgba(0,0,0,.33);
+		-webkit-box-shadow:0 2px 4px rgba(0,0,0,.33);
+		-moz-box-shadow:0 2px 4px rgba(0,0,0,.33);
+	overflow: visible;
+}
+a img, a:hover img {
+	border: none;
+}
+
+::-moz-selection { background: #e32483; color: #ffffff; text-shadow: none; }
+::selection { background: #e32483; color: #ffffff; text-shadow: none; }
