@@ -5,6 +5,9 @@ Name: Matt Vincent
 Website: http://www.i824u.com
 Twitter: http://twitter.com/art209design
 
+# Need to know
+* If you don't want to use one of the two menus, remove from header and functions or create a new WP3 menu, leave empty and select
+
 ## Changelog
 * 03/07/13
 	*added rows
