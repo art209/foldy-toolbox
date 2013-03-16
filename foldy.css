@@ -102,22 +102,29 @@ canvas {
   .grid-full  { width: 96.969696969697%; }
 
   .grid-hm {
-  	width: 88%; margin:0 6% 1em;
+  	width: 84%; margin:0 8% 1em;
   }
   .gallery .grid-unit {
     width: 30.30303030303%;
   }
-
   .content-pad-right {
     padding-right: 4%; /* Use (or don't) as necessary. */
   }
-
   .content-pad-left {
     padding-left: 4%;
   }
-
 }
-
+@media screen and (min-width: 641px) and (max-width: 767px) {
+.container {width: 96%;}
+.grid-hm {width: 78%; margin:0 11% 1em;}
+}
+@media screen and (min-width: 768px) and (max-width: 960px) {
+.container {width: 94%;}
+.grid-hm {width: 72%; margin:0 14% 1em;}
+}
+@media screen and (min-width: 961px) {
+.grid-hm {width: 66%; margin:0 17% 1em;}
+}
 /* Micro Clearfix - http://nicolasgallagher.com/micro-clearfix-hack/
 For best results, use your favorite clearfix here.
 -------------------------------------------------------------- */

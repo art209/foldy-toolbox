@@ -7,6 +7,3 @@
  * @since Toolbox 0.1
  */
 ?>
-<div id="secondarypage-header">
-</div>
-	

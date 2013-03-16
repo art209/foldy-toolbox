@@ -11,7 +11,8 @@
 <!--[if IE 6]><html id="ie6" <?php language_attributes(); ?>><![endif]-->
 <!--[if IE 7]><html id="ie8" <?php language_attributes(); ?>><![endif]-->
 <!--[if IE 8]><html id="ie8" <?php language_attributes(); ?>><![endif]-->
-<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!--><html <?php language_attributes(); ?>><!--<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html <?php language_attributes(); ?>><!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 
@@ -63,14 +64,19 @@ jQuery(document).ready(function($) {
 })
 </script>
 <!-- end PrettyPhoto  -->
-
 </head>
 <body <?php body_class(); ?>>
+<a href="https://github.com/art209/foldy-toolbox" target="_blank"><img style="position: fixed; top: 0; right: 0; border: 0; z-index:9999;" src="<?php bloginfo('stylesheet_directory'); ?>/images/forkme_right_gray_6d6d6d-76.png" alt="Fork me on GitHub"></a>
 <div class="container">
 <div class="row">
 <div class="grid-3"><h1 class="logo"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1></div>
 <div class="grid-3 top-right-widget"><?php include ('sidebar-header.php'); ?></div>
-</div><!-- end row  -->
+</div><!-- .row  -->
+<div class="row">
+<div class="grid-6">
+<h1 id="site-description"><?php bloginfo( 'description' ); ?></h1>
+</div><!-- .grid-6  -->
+</div><!-- .row  -->
 <nav id="fixed-nav">
 <?php wp_nav_menu( array('theme_location' => 'secondary','items_wrap' => '%3$s' ) ); ?></nav>
 

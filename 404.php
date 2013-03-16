@@ -32,6 +32,3 @@ get_header(); ?>
 	</div><!-- #primary -->
 </div><!-- .grid-6 -->
 </div><!-- .row -->
-<div class="row">
-<div class="grid-6">
-<?php get_footer(); ?>

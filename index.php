@@ -14,7 +14,7 @@
 
 get_header(); ?>
 <div class="row">
-<div class="grid-4">
+<div class="grid-hm">
 		<div id="primary">
 			<div id="content" role="main">
 
@@ -24,7 +24,6 @@ get_header(); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-
 					<?php
 						/* Include the Post-Format-specific template for the content.
 						 * If you want to overload this in a child theme then include a file
@@ -32,7 +31,7 @@ get_header(); ?>
 						 */
 						get_template_part( 'content', get_post_format() );
 					?>
-
+	
 				<?php endwhile; ?>
 
 				<?php toolbox_content_nav( 'nav-below' ); ?>
@@ -54,10 +53,7 @@ get_header(); ?>
 
 				</div><!-- #content -->
 		</div><!-- #primary -->
-</div><!-- .grid-4 -->
-<div class="grid-2">
-<?php get_sidebar(); ?>
-</div><!-- .grid-2 -->
+</div><!-- .grid-hm -->
 </div><!-- end row -->
 <div class="row">
 <div class="grid-6">

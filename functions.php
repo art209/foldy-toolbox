@@ -5,6 +5,16 @@
 // Add extra widgets
 function foldytoolbox_widgets_init() {
 	register_sidebar( array(
+		'name' => __( 'Intro Widget', 'toolbox' ),
+		'id' => 'intro-sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
+	
+
+	register_sidebar( array(
 		'name' => __( 'Header Widget', 'toolbox' ),
 		'id' => 'header-sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -47,8 +57,7 @@ function insert_jquery(){
 	wp_enqueue_script('jquery');
 }
 add_action('init', 'insert_jquery');
-
-
+// No Comments on pages
 function ncop_comments_open_filter($open, $post_id=null)
 {
     $post = get_post($post_id);
@@ -66,3 +75,5 @@ add_filter('comments_template', 'ncop_comments_template_filter', 10, 1);
 register_nav_menus( array(
 		'secondary' => __( 'Secondary Menu', 'foldytoolbox' ),
 	) );
+// Add Thumbnails
+add_theme_support( 'post-thumbnails' );

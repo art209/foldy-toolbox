@@ -8,7 +8,7 @@
 
 get_header(); ?>
 <div class="row">
-<div class="grid-4">
+<div class="grid-hm">
 		<div id="primary">
 			<div id="content" role="main">
 
@@ -30,10 +30,7 @@ get_header(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #primary -->
-</div><!-- .grid-4 -->
-<div class="grid-2">
-<?php get_sidebar(); ?>
-</div><!-- .grid-2 -->
+</div><!-- .grid-hm -->
 </div><!-- end row -->
 <div class="grid-6">
 <?php get_footer(); ?>

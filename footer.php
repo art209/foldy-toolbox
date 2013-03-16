@@ -19,8 +19,9 @@
  <div class="clear"></div>
 	    </div><!-- #page -->
 <div id="copy">
-<p>2013 GNU GPL + WTFPL</p>
-<p>Foldy is a child theme for <a href="http://wordpress.org/extend/themes/toolbox" target="_blank">Toolbox</a></p>
+<p>2013&copy; Matt Vincent | All rights reserved.</p>
+<p>Foldy is a child theme I created for <a href="http://wordpress.org/extend/themes/toolbox" target="_blank">Toolbox</a><br />
+using <a href="https://github.com/davatron5000/Foldy960" target="_blank">Foldy960</a> grid framework. | GNU GPLv2 + WTFPL</p>
 </div><!-- #copy -->
 <a href="#" class="scrollup"></a>
 </div><!-- .grid-6 -->
@@ -37,7 +38,12 @@
         }); 
  
         $('.scrollup').click(function(){
-            $("html, body").animate({ scrollTop: 0 }, 800);
+            $("body").animate({ scrollTop: 0 }, 500);
+            return false;
+        });
+         // html For Firefox
+        $('.scrollup').click(function(){
+            $("html").animate({ scrollTop: 0 }, 500);
             return false;
         });
  
